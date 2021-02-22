@@ -1,27 +1,24 @@
 {
   "name": "electron-auto-update",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "build": "electron-builder build --win --p never",
-    "deploy": "electron-builder build --win --p always",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "prernakakria123 <kakria99@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^11.2.3",
+    "electron": "^11.3.0",
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
     "electron-updater": "^4.3.5"
   },
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+		"build": "electron-builder  --windows",
+		"release": "electron-builder --windows --publish always",
+    "start": "electron ."
+  },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/prernakakria123/electron-autoupdate-build.git"
+    "type" : "git",
+    "url" : "https://github.com/prernakakria123/electron-autoupdate-build.git"
   }
 }
